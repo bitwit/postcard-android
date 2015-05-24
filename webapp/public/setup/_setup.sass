@@ -1,0 +1,119 @@
+div.network-setup-view
+  &.ng-leave.ng-leave-active, &.ng-enter
+    //left: 100%
+    -webkit-transform: translate3d(100%, 0, 0)
+    opacity: 0
+  &.ng-leave, &.ng-enter.ng-enter-active
+    //left: 0
+    -webkit-transform: translate3d(0, 0, 0)
+    opacity: 1
+
+div.network-setup-view
+  overflow: hidden
+
+div.network-selection-table
+  -webkit-overflow-scrolling: touch
+  overflow-y: hidden
+  overflow-x: scroll
+  &::-webkit-scrollbar
+    display: none
+  ul.network-cells
+    overflow: hidden
+    margin: 0 auto
+    padding: 0
+    height: 64/$em
+    list-style-type: none
+  li.network
+    cursor: pointer
+    float: left
+    margin: 16/$em
+    width: 32/$em
+    height: 32/$em
+    background-color: $color-blue-dark
+
+div.network-title-bar
+  clear: both
+
+div.network-setup-section
+  clear: both
+  position: relative
+  overflow-y: scroll
+
+div.setup-fields
+  +single-transition(height, 0.26s, ease-in-out, 0s)
+
+div.setup-fields-container
+  -webkit-transform: translate3d(0, 0, 0)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  &.ng-animate
+    +single-transition(all, 0.26s, ease-in-out, 0s)
+  &.ng-leave.ng-leave-active
+    opacity: 0
+    max-height: 0
+  &.ng-enter
+    opacity: 0
+    max-height: 0
+  &.ng-leave, &.ng-enter.ng-enter-active
+    opacity: 1
+    max-height: 1000/$em
+
+div.setup-field
+  padding: 0 5%
+  &.description
+    text-align: center
+    margin: 10/$em 0
+    padding: 0 40/$em
+    line-height: 20/$em
+    span.value
+      color: $color-blue-dark
+      text-transform: uppercase
+      font-size: 14/$em
+
+div.field-type
+  &.url-button
+    text-align: center
+    a.value
+      display: block
+      margin-bottom: 20/$em
+      text-decoration: none
+      color: $color-blue-medium
+  &.text-field
+    span.value
+      display: block
+      color: $color-orange-dark
+      font-size: 14/$em
+      text-transform: uppercase
+      margin-bottom: 6/$em
+    input.text
+      margin: 0 0 10/$em
+      border: 0
+      border-bottom: 1/$em solid $color-blue-medium
+      +border-radius(0)
+      padding: 0
+      width: 100%
+      height: 20/$em
+      background: none
+      font:
+        family: Helvetica Neue, Helvetica, Arial
+        weight: 300
+        size: 20/$em
+      &:focus
+        outline: 0
+
+button.setup
+  -webkit-transform: translate3d(0, 0, 0)
+  text-align: center
+  color: #FFF
+  margin-top: 10/$em
+  padding: 30/$em 0
+  border: 0
+  width: 100%
+  span.title
+    font-size: 16/$em
+    text-transform: uppercase
+
+button.access-button
+  background-color: $color-blue-medium

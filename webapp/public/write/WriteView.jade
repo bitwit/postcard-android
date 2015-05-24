@@ -1,0 +1,71 @@
+div.activity-status-view
+div.postcard-authoring-view(class="sending-{{isSending}}")
+    div(pc-typing-area)
+    div.main-toolbar.toolbar(ng-controller="MainToolbarController", style="height: {{sizes.toolbar.height}}px;")
+        div(pc-suggestion-view)
+        div(class="table-options hidden-{{!isSuggestionViewHidden}}")
+            button.toolbar-button.networks(class="selected-{{mainTableState == 'networks'}}", ng-click="changeState('networks')")
+                span.title Networks
+            button.toolbar-button.add-media(class="selected-{{mainTableState == 'media'}}", ng-click="changeState('media')")
+                span.title Media
+            button.toolbar-button.link(class="selected-{{mainTableState == 'link'}}", ng-click="changeState('link')")
+                span.title Link
+            button.toolbar-button.settings(class="selected-{{mainTableState == 'settings'}}", ng-click="changeState('settings')")
+                span.title Settings
+        div(class="character-count hidden-{{!isSuggestionViewHidden}}")
+            span.value {{characterCount}}
+    div.main-table-container(style="height: {{sizes.table.height}}px;")
+        div.main-table-scroller(ng-switch="", on="mainTableState")
+            section.table-view.networks(ng-switch-when="networks")
+                div.table-section(ng-style="{'height': (networkAccounts.length * 60) +'px'}")
+                    div(ng-repeat="networkAccount in networkAccounts", pc-network-account-cell)
+                div.table-section
+                    div.table-cell(ng-click="addNetwork()")
+                        div.icon(style="-webkit-mask: url(img/icon-add-network@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Add New Network
+                        span.description Authorize an account for posting
+            section.table-view.add-media(ng-switch-when="media")
+                div.table-section(ng-if="socialActivity.messageMedia == null")
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-image-recent@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Latest Photo
+                        span.description Recent image from camera roll
+                    div.table-cell(ng-click="captureMedia()")
+                        div.icon(style="-webkit-mask: url(img/icon-image-camera@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Take picture/video
+                        span.description Using camera
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-image-library@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Select from library
+                        span.description Browse all your media
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-attachment-upload@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Upload photo/video from Dropbox
+                        span.description Uses extra bandwidth
+                div.table-section(ng-if="socialActivity.messageMedia")
+                    div.table-cell
+                        img(ng-src="{{socialActivity.messageMedia.imageLocation}}")
+            section.table-view.link(ng-switch-when="link")
+                div.table-section
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-keyboard@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Add link to message
+                        span.description Type in URL
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-attachment@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Attach link from Dropbox
+                        span.description Quickly share any file
+            section.table-view.settings(ng-switch-when="settings")
+                div.table-section
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-credits@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Credits &amp; Contact Info
+                        span.description Hat tips for everyone
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-upgrade@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title {{upgradeButtonTitle()}}
+                        span.description Help support future improvements
+                    div.table-cell
+                        div.icon(style="-webkit-mask: url(img/icon-tutorials@2x.png); -webkit-mask-size: 32px 32px;")
+                        span.title Redisplay tutorial
+                        span.description Display tutorial alerts again

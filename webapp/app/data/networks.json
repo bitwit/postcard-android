@@ -1,0 +1,85 @@
+[
+    {
+        "displayName": "Custom Network",
+        "slug": "custom",
+        "className": "CustomNetwork",
+        "description": "Add your own website and create a personal social network.",
+        "order": 8,
+        "setupFields": [
+            {
+                "title": "Learn More",
+                "type": "URLButton",
+                "url": "http://postcardsocial.net/docs/"
+            },
+            {
+                "title": "Website URL",
+                "type": "Field",
+                "property": "siteUrl"
+            },
+            {
+                "title": "Username",
+                "type": "Field",
+                "property": "username"
+            },
+            {
+                "title": "Password",
+                "type": "SecureField",
+                "property": "password"
+            }
+        ]
+    },
+    {
+        "displayName": "Facebook",
+        "slug": "facebook",
+        "className": "FacebookNetwork",
+        "description": "Grant permission to post to your Facebook account(s).",
+        "order": 3
+    },
+    {
+        "displayName": "Twitter",
+        "slug": "twitter",
+        "className": "TwitterNetwork",
+        "description": "Grant permission to post to your Twitter account(s).",
+        "order": 2
+    },
+    {
+        "displayName": "App.net",
+        "slug": "adn",
+        "className": "ADNNetwork",
+        "description": "Log in to App.net to grant posting permissions.",
+        "order": 6,
+        "setupFields": [
+            {
+                "title": "Username",
+                "type": "Field",
+                "property": "username"
+            },
+            {
+                "title": "Password",
+                "type": "Field",
+                "property": "password"
+            }
+        ]
+    },
+    {
+        "displayName": "LinkedIn",
+        "slug": "linkedin",
+        "className": "LinkedInNetwork",
+        "description": "Use your LinkedIn account to post profile status updates.",
+        "order": 4
+    },
+    {
+        "displayName": "Buffer",
+        "slug": "buffer",
+        "className": "BufferNetwork",
+        "description": "Use your Buffer account to schedule/buffer posts.",
+        "order": 7
+    },
+    {
+        "displayName": "Tumblr",
+        "slug": "tumblr",
+        "className": "TumblrNetwork",
+        "description": "Post content to your Tumblog.",
+        "order": 5
+    }
+]

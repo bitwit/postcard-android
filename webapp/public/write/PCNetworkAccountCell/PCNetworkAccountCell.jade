@@ -1,0 +1,11 @@
+div(class="table-cell network-account-cell highlight-{{shouldHighlight}} touch-move-{{didTouchMove}} enabled-{{networkAccount.isEnabled}} host-{{networkAccount.isHost}}", ng-style="cellStyles()")
+    div.back-view
+        div.host-icon(ng-style="hostIconStyles()")
+        div.settings-icon(ng-style="settingsIconStyles()")
+    div.front-view(ng-style="frontViewStyles()")
+        span(class="enabled-indicator enabled-{{networkAccount.isEnabled}}")
+        div.host-indicator
+        div.info-container
+            div.network-icon(ng-style="networkIconStyles()")
+            span.title {{networkAccount.title}}
+            span.description {{networkAccount.networkId}}

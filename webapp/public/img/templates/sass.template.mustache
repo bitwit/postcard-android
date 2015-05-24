@@ -1,0 +1,40 @@
+{
+  // Default options
+  'functions': true
+}
+
+{{#items}}
+${{name}}-x: {{x}}/$em
+${{name}}-y: {{y}}/$em
+${{name}}-offset-x: {{offset_x}}/$em
+${{name}}-offset-y: {{offset_y}}/$em
+${{name}}-width: {{width}}/$em
+${{name}}-height: {{height}}/$em
+${{name}}-total-width: {{total_width}}/$em
+${{name}}-total-height: {{total_height}}/$em
+${{name}}-image: '{{{escaped_image}}}'
+${{name}}: {{x}}/$em {{y}}/$em {{offset_x}}/$em {{offset_y}}/$em {{width}}/$em {{height}}/$em {{total_width}}/$em {{total_height}}/$em '{{{escaped_image}}}'
+{{/items}}
+
+{{#options.functions}}
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+{{/options.functions}}

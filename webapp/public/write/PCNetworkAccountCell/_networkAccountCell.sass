@@ -1,0 +1,104 @@
+div.network-account-cell
+  padding: 0
+  position: absolute
+  //-webkit-transform: translate3d(0, 0, 0)
+  +single-transition(-webkit-transform, 0.34s, ease-in-out, 0s !important)
+  &.touch-move-false, &.touch-move-false-add, &.touch-move-false-add-active
+    div.front-view
+      +single-transition(-webkit-transform, 0.10s, ease-in-out, 0s)
+    div.host-icon
+      +single-transition(-webkit-transform, 0.20s, ease-in-out, 0s)
+  &.enabled-true
+    color: $color-blue-dark
+  &.enabled-false
+    color: $color-grey
+    .network-icon
+      background-color: $color-grey
+
+    span.description
+      color: $color-grey
+
+    span.enabled-indicator
+      background-color: $color-grey-light
+      -webkit-mask: url(img/icon-disabled-network@2x.png)
+      -webkit-mask-size: 32/$em 32/$em
+
+  &.host-true
+    div.host-icon
+      background-color: $color-blue-dark
+      -webkit-mask: url(img/cell-home-cancel@2x.png)
+      -webkit-mask-size: 60px 60px
+
+    div.host-indicator
+      opacity: 1 !important
+
+    div.info-container
+      -webkit-transform: translate3d(42/$em, 0, 0)
+
+  &.highlight-true
+    div.front-view
+      background-color: $color-orange-light
+
+  div.front-view
+    //-webkit-transform: translate3d(0, 0, 0)
+    background-color: white
+    line-height: 10/$em
+    padding: 14/$em 20/$em
+
+    span.enabled-indicator
+      float: right
+      display: block
+      width: 32/$em
+      height: 32/$em
+      background-color: $color-blue-dark
+      -webkit-mask: url(img/icon-enabled-network@2x.png)
+      -webkit-mask-size: 32/$em 32/$em
+      +single-transition(background-color, 0.26s, ease-in-out, 0s)
+
+  div.back-view
+    position: absolute
+    width: 100%
+
+  div.info-container
+    position: relative
+    left: 0
+    +single-transition(-webkit-transform, 0.26s, ease-in-out, 0s)
+
+  div.host-indicator
+    position: absolute
+    top: 22/$em
+    left: 24/$em
+    width: 16/$em
+    height: 16/$em
+    background-color: $color-blue-dark
+    -webkit-mask: url(img/icon-hosting@2x.png)
+    -webkit-mask-size: 16/$em 16/$em
+    opacity: 0
+    +single-transition(opacity, 0.26s, linear, 0s)
+
+
+  div.host-icon
+    position: relative
+    float: left
+    width: 60/$em
+    height: 60/$em
+    -webkit-mask: url(img/cell-home@2x.png)
+    -webkit-mask-size: 60px 60px
+    +single-transition(background-color, 0.26s, linear, 0s)
+
+  div.settings-icon
+    position: relative
+    float: right
+    width: 60/$em
+    height: 60/$em
+    -webkit-mask: url(img/cell-settings@2x.png)
+    -webkit-mask-size: 60px 60px
+    +single-transition(background-color, 0.26s, linear, 0s)
+
+div.network-icon
+  float: left
+  width: 32/$em
+  height: 32/$em
+  margin-right: 10/$em
+  background-color: $color-blue-dark
+  +single-transition(all, 0.26s, ease-in-out, 0s)

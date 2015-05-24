@@ -1,0 +1,7 @@
+div(class="table-cell network-progress-cell")
+    div.front-view(ng-style="frontViewStyles()")
+        div.info-container
+            div.network-icon(ng-style="networkIconStyles()")
+            div.progress-bar
+                div.progress(ng-style="progressStyles()")
+            span.description {{networkAccount.networkId}}

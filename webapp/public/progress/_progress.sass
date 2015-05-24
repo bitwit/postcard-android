@@ -1,0 +1,47 @@
+div.progress-cell
+  +single-transition(all, 1.0s, ease, 0.5s)
+  -webkit-transform: translate3d(0, 0, 0)
+
+  &.ng-leave.ng-leave-active
+    -webkit-transform: translate3d(0, -100%, 0)
+    opacity: 0
+
+  &.ng-enter
+    -webkit-transform: translate3d(0, 100%, 0)
+    opacity: 0
+
+  &.ng-enter.ng-enter-active
+    -webkit-transform: translate3d(0, 0, 0)
+    opacity: 1
+
+
+div.network-progress-cell
+  padding: 0
+  position: absolute
+  left: 50%
+
+  div.front-view
+    +single-transition(-webkit-transform, 1.0s, ease, 0s)
+
+  div.info-container
+    width: 80%
+    height: 40/$em
+    margin-left: -40%
+
+  div.progress-bar
+    float: left
+    margin: 5/$em 0 5/$em
+    height: 3/$em
+    width: 80%
+    background-color: #808080
+
+  div.progress
+    +single-transition(width, 0.9s, ease, 0s)
+    width: 0
+    height: 100%
+    background-color: $color-blue-light
+
+  span.description
+    display: block
+    padding-top: 4/$em
+    width: 50%

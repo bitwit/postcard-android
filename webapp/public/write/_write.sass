@@ -1,0 +1,185 @@
+div.postcard-authoring-view
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  &.ng-animate
+    +single-transition(top, 0.34s, ease-in, 0s !important)
+
+  &.sending-true, &.sending-true-add-active
+    top: -900/$em
+
+div.typing-area-container
+  position: relative
+  width: 100%
+  height: 160/$em
+  background-color: $color-grey-ultra-light
+  +single-transition(height, 0.16s, ease-in-out, 0s)
+
+.typing-highlighter
+  color: transparent
+  span.highlight
+    background-color: $color-orange-light
+
+.typing-area
+  position: absolute
+  top: 0
+  left: 0
+  box-sizing: border-box
+  margin: 0
+  border: 0
+  padding: 4/$em 10/$em 0
+  width: 100%
+  height: 100%
+  background: none
+  font:
+    family: Helvetica Neue, Helvetica, Arial
+    size: 20/$em
+    weight: 300
+  vertical-align: top
+
+div.toolbar
+  position: relative
+  background-color: $color-blue-medium
+  // height: 44/$em
+  overflow: hidden
+  color: white
+  text-align: center
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+
+.header-title
+  position: absolute
+  pointer-events: none
+  width: 100%
+  margin: 14/$em 0
+  padding: 0
+  line-height: 16/$em
+  text:
+    align: center
+
+h2.header-title
+  font-size: 16/$em
+  text:
+    transform: uppercase
+
+h3.header-title
+  font:
+    weight: lighter
+    size: 16/$em
+  letter-spacing: 1/$em
+
+div.main-toolbar
+  div.character-count
+    float: right
+    margin: 0 20/$em
+    line-height: 64/$em
+    span.value
+      font:
+        style: italic
+        weight: lighter
+        size: 28/$em
+
+button.toolbar-button
+  display: block
+  background: none
+  font-size: 16/$em
+  margin: 0
+  padding: 16/$em 14/$em
+  border: none
+  float: left
+
+  span.title
+    display: block
+    text-indent: -9000/$em
+    background: #FFF
+    width: 32/$em
+    height: 32/$em
+    +single-transition(background-color, 0.10s, linear, 0s)
+
+  &:active, &:focus
+    outline: 0
+    border: 0
+
+  &.selected-false
+    opacity: 0.74
+    span.title
+      background-color: $color-grey-ultra-light
+
+  &.networks
+    span.title
+      -webkit-mask: url(img/icon-networks@2x.png)
+      -webkit-mask-size: 100% 100%
+
+  &.add-media
+    span.title
+      -webkit-mask: url(img/icon-camera@2x.png)
+      -webkit-mask-size: 100% 100%
+
+  &.link
+    span.title
+      -webkit-mask: url(img/icon-attachment-link@2x.png)
+      -webkit-mask-size: 100% 100%
+
+  &.settings
+    span.title
+      -webkit-mask: url(img/icon-settings@2x.png)
+      -webkit-mask-size: 100% 100%
+
+ul.suggestion-list
+  position: absolute
+  top: 0
+  left: 0
+  padding: 0 0 0 10/$em
+  margin: 0
+  width: 200%
+  height: 100%
+  list-style-type: none
+  color: white
+  +single-transition(all, 0.26s, ease-in-out, 0s)
+
+li.suggestion
+  cursor: pointer
+  float: left
+  height: 100%
+  margin-right: 10/$em
+  padding: 0
+  &:hover
+    background-color: $color-blue-light
+    color: $color-orange-light
+  span.value
+    display: block
+    font-size: 20/$em
+    line-height: 32/$em
+
+div.main-table-container
+  position: relative
+  overflow: scroll
+  -webkit-transform: translate3d(0, 0, 0)
+  -webkit-overflow-scrolling: touch
+
+section.table-view
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  &.ng-animate
+    +single-transition(all, 0.26s, ease-in-out, 0s)
+  &.ng-leave.ng-leave-active
+    -webkit-transform: translate3d(-100%, 0, 0)
+  //left: -100%
+  //opacity: 0
+  &.ng-enter
+    -webkit-transform: translate3d(100%, 0, 0)
+  //left: 100%
+  //opacity: 0
+  &.ng-leave, &.ng-enter.ng-enter-active
+    -webkit-transform: translate3d(0, 0, 0)
+//left: 0
+//opacity: 1

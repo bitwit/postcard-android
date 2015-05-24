@@ -1,0 +1,28 @@
+[
+    {
+        "isHost": false,
+        "id": 10,
+        "title": "twitter Network",
+        "order": 0,
+        "token": "demo data here",
+        "networkId": "twitter",
+        "tokenSecret": "balh",
+        "lastDeactivated": "2014-09-19T01:51:32.054Z",
+        "isEnabled": true,
+        "lastActivated": "2014-09-19T01:51:40.600Z"
+    },
+    {
+        "isHost": false,
+        "id": 12,
+        "title": "twitter Network",
+        "order": 1,
+        "token": "demo data",
+        "networkId": "twitter",
+        "tokenSecret": "blah",
+        "lastDeactivated": "2014-09-19T01:51:32.054Z",
+        "isEnabled": true,
+        "lastActivated": "2014-09-19T01:51:40.600Z"
+    }
+
+
+]

@@ -1,0 +1,22 @@
+div.network-selection-table
+    ul.network-cells(style="width: {{64 * networks.length}}px;")
+        li.network(ng-repeat="network in networks", ng-click="networkSelected(network)", ng-style="networkIconStyles(network)")
+div.network-title-bar.toolbar
+    h3.header-title
+        span.title {{selectedNetwork.displayName || ""}}
+div.network-setup-section(ng-if"selectedNetwork", style="height: {{sizes.setupTable.height}}px;")
+    div.setup-fields(ng-switch="", on="selectedNetwork", ng-style="fieldsContainerHeight()")
+        div.setup-fields-container(ng-switch-default)
+            div.setup-field.description
+                span.value {{selectedNetwork.description}}
+            div.setup-field(ng-switch="", on="field.type", ng-repeat="field in selectedNetwork.setupFields")
+                div.field-type.text-field(ng-switch-when="Field")
+                    span.value {{field.title}}
+                    input.text(type="text", ng-model="field.value")
+                div.field-type.text-field(ng-switch-when="SecureField")
+                    span.value {{field.title}}
+                    input.text(type="password", ng-model="field.value")
+                div.field-type.url-button(ng-switch-when="URLButton")
+                    a.value(href="{{field.url}}") {{field.title}}
+    button.setup.access-button(ng-click="grantAccess()")
+        span.title Set up Network

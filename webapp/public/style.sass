@@ -1,0 +1,44 @@
+body
+  margin: 0
+  padding: 0
+  font:
+    family: Helvetica Neue, Helvetica, Arial
+    size: $font-size * 1px
+
+.hidden-true
+  opacity: 0
+  pointer-events: none
+  display: none
+
+.ng-cloak
+  display: none
+
+::-webkit-scrollbar
+  display: none
+
+.container
+  padding: 0 !important
+  max-width: 568/$em
+  margin: 0 auto
+
+.view-container
+  position: relative
+
+div.stack-view
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  &.ng-animate
+    +single-transition(all, 0.20s, ease-out, 0s)
+
+  &.ng-leave.ng-leave-active, &.ng-enter
+    //left: auto
+    //right: 100%
+    -webkit-transform: translate3d(-100%, 0, 0)
+    opacity: 0
+  &.ng-leave, &.ng-enter.ng-enter-active
+    //left: auto
+    //right: 0
+    -webkit-transform: translate3d(0, 0, 0)
+    opacity: 1

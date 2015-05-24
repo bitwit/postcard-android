@@ -1,0 +1,17 @@
+.sass-cache
+.git
+.idea
+.vagrant
+.tmp
+node_modules
+webapp/app/bower_components
+
+postcard/src/main/assets/www
+postcard/src/main/assets/postcard.properties
+postcard.properties
+
+test/reports/
+
+.gradle
+/local.properties
+.DS_Store
